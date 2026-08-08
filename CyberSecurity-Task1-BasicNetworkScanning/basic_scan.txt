@@ -1,0 +1,7 @@
+# Nmap 7.99 scan initiated Sat Aug  8 09:06:20 2026 as: /usr/lib/nmap/nmap --privileged -oN basic_scan.txt 10.0.2.15
+Nmap scan report for 10.0.2.15
+Host is up.
+All 1000 scanned ports on 10.0.2.15 are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+
+# Nmap done at Sat Aug  8 09:09:51 2026 -- 1 IP address (1 host up) scanned in 210.18 seconds
