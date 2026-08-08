@@ -1,0 +1,82 @@
+TASK 1 - BASIC NETWORK SCANNING WITH NMAP
+
+==========================================
+
+Target:
+10.0.2.15
+
+Target Type:
+Local Kali Linux Virtual Machine running in VirtualBox NAT mode.
+
+1. BASIC SCAN
+-------------
+Command:
+nmap 10.0.2.15
+
+Result:
+Host is up.
+All 1000 scanned TCP ports were in ignored states.
+1000 TCP ports were reported as filtered (no-response).
+
+Finding:
+No open TCP ports were identified in the default scan.
+
+2. SERVICE VERSION SCAN
+-----------------------
+Command:
+nmap -sV 10.0.2.15
+
+Result:
+The host was detected as up.
+All 1000 scanned TCP ports were filtered.
+No service or service version could be identified.
+
+Finding:
+Because no accessible open ports were detected, Nmap could not identify
+a running network service or its version.
+
+3. OS DETECTION
+---------------
+Command:
+sudo nmap -O 10.0.2.15
+
+Result:
+Host is up.
+All 1000 scanned TCP ports were filtered.
+Nmap reported:
+"Too many fingerprints match this host to give specific OS details."
+
+Finding:
+Nmap could not determine the exact operating system. The filtered ports
+limited the network responses available for OS fingerprinting.
+
+4. PORT ANALYSIS
+----------------
+Open ports found:
+None in the default 1000 TCP port scan.
+
+Filtered ports:
+1000 TCP ports.
+
+Security interpretation:
+A filtered port means that Nmap did not receive a response that allowed
+it to determine whether the port was open or closed. This can occur
+because of firewall rules or network filtering/NAT behavior.
+
+5. SECURITY OBSERVATION
+-----------------------
+No open TCP ports were identified in the default scan, so no exposed
+network service was identified during this test.
+
+This scan was performed only against the user's own local Kali Linux VM
+for educational and internship purposes.
+
+6. LIMITATIONS
+--------------
+The target was a Kali Linux VM using VirtualBox NAT networking.
+Because the scanned ports were filtered, service detection and OS
+fingerprinting were limited.
+
+Conclusion:
+The Nmap scans successfully identified the host as reachable but did
+not identify any open TCP ports or specific services/OS information.
