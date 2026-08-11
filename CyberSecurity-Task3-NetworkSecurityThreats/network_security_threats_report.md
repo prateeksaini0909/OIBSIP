@@ -22,14 +22,7 @@
 
 # 1. Introduction
 
-Network security is essential because organizations increasingly depend on interconnected systems, cloud platforms, 
-web applications, remote access, and digital communication. Network attacks can affect the confidentiality, integrity,
-and availability (CIA) of information and services. Attackers may attempt to overwhelm systems, intercept communications,
-forge network identities, or manipulate name-resolution services. Among the important network threats are DoS/DDoS attacks,
-Man-in-the-Middle attacks, IP spoofing, and DNS poisoning/spoofing. 
-These attacks can result in service outages, unauthorized access, information exposure, financial losses, and reputational 
-damage. A strong defense therefore requires a layered approach involving secure protocols, access controls, network 
-segmentation, traffic filtering, monitoring, secure DNS configuration, and incident-response planning.
+Network security is essential because organizations increasingly depend on interconnected systems, cloud platforms, web applications, remote access, and digital communication. Network attacks can affect the confidentiality, integrity, and availability (CIA) of information and services. Attackers may attempt to overwhelm systems, intercept communications, forge network identities, or manipulate name-resolution services. Among the important network threats are DoS/DDoS attacks, Man-in-the-Middle attacks, IP spoofing, and DNS poisoning/spoofing. These attacks can result in service outages, unauthorized access, information exposure, financial losses, and reputational damage. A strong defense therefore requires a layered approach involving secure protocols, access controls, network segmentation, traffic filtering, monitoring, secure DNS configuration, and incident-response planning.
 
 ---
 
@@ -37,33 +30,25 @@ segmentation, traffic filtering, monitoring, secure DNS configuration, and incid
 
 ## 2.1 What Are DoS and DDoS Attacks?
 
-A **Denial-of-Service (DoS)** attack attempts to make a system, application, or network service unavailable to legitimate
-users. The attacker may consume network bandwidth, exhaust server resources, or send excessive requests.
+A **Denial-of-Service (DoS)** attack attempts to make a system, application, or network service unavailable to legitimate users. The attacker may consume network bandwidth, exhaust server resources, or send excessive requests.
 
-A **Distributed Denial-of-Service (DDoS)** attack is similar, but the malicious traffic originates from multiple systems.
-Attackers may use a botnet or compromised Internet-connected devices, making the traffic volume larger and more difficult
-to filter.
+A **Distributed Denial-of-Service (DDoS)** attack is similar, but the malicious traffic originates from multiple systems. Attackers may use a botnet or compromised Internet-connected devices, making the traffic volume larger and more difficult to filter.
 
-MITRE ATT&CK classifies Network Denial of Service as a technique intended to degrade or block the availability of targeted
-resources. Its documented sub-techniques include Direct Network Flood and Reflection Amplification.
+MITRE ATT&CK classifies Network Denial of Service as a technique intended to degrade or block the availability of targeted resources. Its documented sub-techniques include Direct Network Flood and Reflection Amplification.
 
 ## 2.2 How the Attack Works
 
 A simplified DDoS attack can be understood as:
 
-**Attacker-controlled systems → Large volume of traffic/requests → Target network/service → Resources become exhausted →
-Legitimate users experience disruption**
+**Attacker-controlled systems → Large volume of traffic/requests → Target network/service → Resources become exhausted → Legitimate users experience disruption**
 
 DDoS attacks can target network bandwidth, DNS services, web servers, network devices, or application resources.
 
 ## 2.3 Real-World Case Study — Mirai and the Dyn Attack
 
-In October 2016, the **Mirai botnet** demonstrated the impact of insecure Internet-of-Things devices. Mirai compromised
-poorly secured IoT devices and used them to generate large-scale DDoS traffic. One major incident targeted **Dyn**, a DNS
-infrastructure provider, causing access problems for many major Internet services.
+In October 2016, the **Mirai botnet** demonstrated the impact of insecure Internet-of-Things devices. Mirai compromised poorly secured IoT devices and used them to generate large-scale DDoS traffic. One major incident targeted **Dyn**, a DNS infrastructure provider, causing access problems for many major Internet services.
 
-The incident showed that compromised consumer devices can become part of a large botnet and that attacks against critical
-infrastructure providers can create widespread secondary disruption.
+The incident showed that compromised consumer devices can become part of a large botnet and that attacks against critical infrastructure providers can create widespread secondary disruption.
 
 ## 2.4 Impact
 
@@ -81,18 +66,15 @@ A successful DoS/DDoS attack can:
 
 ### 1. Use DDoS Protection and Upstream Filtering
 
-Organizations can use specialized DDoS protection services, content delivery networks (CDNs), or ISP-level filtering to 
-absorb and filter malicious traffic before it reaches critical infrastructure.
+Organizations can use specialized DDoS protection services, content delivery networks (CDNs), or ISP-level filtering to absorb and filter malicious traffic before it reaches critical infrastructure.
 
 ### 2. Apply Rate Limiting and Traffic Filtering
 
-Firewalls, load balancers, and application controls can limit abnormal request rates and filter traffic patterns that do not
-match normal business activity.
+Firewalls, load balancers, and application controls can limit abnormal request rates and filter traffic patterns that do not match normal business activity.
 
 ### 3. Maintain Redundancy and an Incident-Response Plan
 
-Critical services should have redundancy, appropriate capacity planning, monitoring, and a documented DDoS response procedure
-. Teams should know how to detect, escalate, contain, and recover from an attack.
+Critical services should have redundancy, appropriate capacity planning, monitoring, and a documented DDoS response procedure. Teams should know how to detect, escalate, contain, and recover from an attack.
 
 ---
 
@@ -100,12 +82,9 @@ Critical services should have redundancy, appropriate capacity planning, monitor
 
 ## 3.1 What Is a MITM Attack?
 
-A **Man-in-the-Middle (MITM)** attack, also known as **Adversary-in-the-Middle (AiTM)** in MITRE ATT&CK, occurs when an 
-attacker positions themselves between two communicating systems.
+A **Man-in-the-Middle (MITM)** attack, also known as **Adversary-in-the-Middle (AiTM)** in MITRE ATT&CK, occurs when an attacker positions themselves between two communicating systems.
 
-The attacker may attempt to observe, redirect, or manipulate communication. MITRE identifies techniques such as ARP cache
-poisoning, DHCP spoofing, DNS/name-resolution manipulation, and rogue wireless access points as ways an adversary can
-establish an interception position.
+The attacker may attempt to observe, redirect, or manipulate communication. MITRE identifies techniques such as ARP cache poisoning, DHCP spoofing, DNS/name-resolution manipulation, and rogue wireless access points as ways an adversary can establish an interception position.
 
 ## 3.2 How the Attack Works
 
@@ -113,20 +92,15 @@ A simplified MITM scenario is:
 
 **User → Attacker-controlled intermediary → Legitimate service**
 
-If communications are not adequately protected, the intermediary may be able to observe or manipulate information
-being transmitted.
+If communications are not adequately protected, the intermediary may be able to observe or manipulate information being transmitted.
 
-Strong TLS/HTTPS authentication helps reduce this risk because it allows the client to verify the identity of the intended
-service and protects data in transit.
+Strong TLS/HTTPS authentication helps reduce this risk because it allows the client to verify the identity of the intended service and protects data in transit.
 
 ## 3.3 Real-World Case Study — Sea Turtle DNS Hijacking Campaign
 
-The **Sea Turtle** campaign demonstrated how DNS manipulation could be combined with man-in-the-middle activity. Security
-researchers reported that attackers compromised organizations involved in domain infrastructure and redirected traffic 
-intended for legitimate services.
+The **Sea Turtle** campaign demonstrated how DNS manipulation could be combined with man-in-the-middle activity. Security researchers reported that attackers compromised organizations involved in domain infrastructure and redirected traffic intended for legitimate services.
 
-The attackers could redirect traffic through attacker-controlled infrastructure, enabling interception of sensitive 
-communications and credentials.
+The attackers could redirect traffic through attacker-controlled infrastructure, enabling interception of sensitive communications and credentials.
 
 ## 3.4 Impact
 
@@ -143,18 +117,15 @@ MITM attacks can result in:
 
 ### 1. Use Strong Encryption and Certificate Validation
 
-Use properly configured HTTPS/TLS and other secure protocols. Users and systems should not ignore certificate warnings 
-because they can indicate an interception or authentication problem.
+Use properly configured HTTPS/TLS and other secure protocols. Users and systems should not ignore certificate warnings because they can indicate an interception or authentication problem.
 
 ### 2. Secure Wireless and Network Infrastructure
 
-Use authenticated wireless networks, strong security configurations, and monitoring for unauthorized access points or
-unexpected network configuration changes.
+Use authenticated wireless networks, strong security configurations, and monitoring for unauthorized access points or unexpected network configuration changes.
 
 ### 3. Use Network Segmentation and Secure Authentication
 
-Separate sensitive systems from less-trusted networks and use strong authentication rather than relying only on network
-location or IP addresses.
+Separate sensitive systems from less-trusted networks and use strong authentication rather than relying only on network location or IP addresses.
 
 ---
 
@@ -162,11 +133,9 @@ location or IP addresses.
 
 ## 4.1 What Is IP Spoofing?
 
-**IP spoofing** occurs when an attacker sends network packets with a forged source IP address. The destination system may 
-therefore see a packet as coming from an address that does not represent the attacker's actual location.
+**IP spoofing** occurs when an attacker sends network packets with a forged source IP address. The destination system may therefore see a packet as coming from an address that does not represent the attacker's actual location.
 
-IP spoofing can be used to conceal the origin of traffic, exploit poorly designed IP-based trust relationships, or support
-reflection/amplification attacks.
+IP spoofing can be used to conceal the origin of traffic, exploit poorly designed IP-based trust relationships, or support reflection/amplification attacks.
 
 ## 4.2 How the Attack Works
 
@@ -174,17 +143,13 @@ A simplified example is:
 
 **Attacker → Packet with forged source IP → Intermediate service → Response sent toward victim**
 
-In reflection attacks, the attacker can make third-party systems send responses toward the spoofed address. This can increase
-the amount of unwanted traffic reaching the victim.
+In reflection attacks, the attacker can make third-party systems send responses toward the spoofed address. This can increase the amount of unwanted traffic reaching the victim.
 
 ## 4.3 Real-World Case Study — Reflection and Amplification DDoS
 
-IP spoofing has been repeatedly used as an enabling technique in reflection/amplification DDoS attacks. In such attacks, 
-packets are sent toward third-party services with the victim's IP address forged as the source. The third-party systems then 
-send their responses toward the victim.
+IP spoofing has been repeatedly used as an enabling technique in reflection/amplification DDoS attacks. In such attacks, packets are sent toward third-party services with the victim's IP address forged as the source. The third-party systems then send their responses toward the victim.
 
-This technique is documented by MITRE ATT&CK under **Network Denial of Service: Reflection Amplification**. NIST's BGP security
-guidance also discusses the use of spoofed IP addresses in large-scale DDoS attacks.
+This technique is documented by MITRE ATT&CK under **Network Denial of Service: Reflection Amplification**. NIST's BGP security guidance also discusses the use of spoofed IP addresses in large-scale DDoS attacks.
 
 ## 4.4 Impact
 
@@ -200,8 +165,7 @@ IP spoofing can:
 
 ### 1. Apply Ingress and Egress Filtering
 
-Network operators should filter traffic whose source addresses are not valid for the network from which the traffic 
-originates. This reduces the ability of systems to send packets with obviously invalid source addresses.
+Network operators should filter traffic whose source addresses are not valid for the network from which the traffic originates. This reduces the ability of systems to send packets with obviously invalid source addresses.
 
 ### 2. Do Not Treat an IP Address as Authentication
 
@@ -209,8 +173,7 @@ An IP address should not be the only factor used to establish trust. Use strong 
 
 ### 3. Improve Routing Security
 
-Network operators can use measures such as **RPKI, Route Origin Authorization (ROA), route-origin validation, and prefix
-filtering** to improve routing security and resilience.
+Network operators can use measures such as **RPKI, Route Origin Authorization (ROA), route-origin validation, and prefix filtering** to improve routing security and resilience.
 
 ---
 
@@ -218,18 +181,15 @@ filtering** to improve routing security and resilience.
 
 ## 5.1 What Is DNS?
 
-The **Domain Name System (DNS)** translates human-readable domain names into IP addresses. For example, when a user enters a
-website address, DNS helps determine which server should receive the request.
+The **Domain Name System (DNS)** translates human-readable domain names into IP addresses. For example, when a user enters a website address, DNS helps determine which server should receive the request.
 
 Because DNS is fundamental to Internet communication, manipulation of DNS information can have a large impact.
 
 ## 5.2 What Is DNS Poisoning/Spoofing?
 
-**DNS poisoning** or **DNS spoofing** occurs when an attacker causes a system to receive incorrect DNS information. A user 
-may believe they are connecting to a legitimate service while being redirected to an attacker-controlled destination.
+**DNS poisoning** or **DNS spoofing** occurs when an attacker causes a system to receive incorrect DNS information. A user may believe they are connecting to a legitimate service while being redirected to an attacker-controlled destination.
 
-MITRE ATT&CK includes **Name Resolution Poisoning** as an Adversary-in-the-Middle sub-technique and explains that 
-name-resolution manipulation can be used to redirect communication or collect authentication material.
+MITRE ATT&CK includes **Name Resolution Poisoning** as an Adversary-in-the-Middle sub-technique and explains that name-resolution manipulation can be used to redirect communication or collect authentication material.
 
 ## 5.3 How the Attack Works
 
@@ -260,18 +220,15 @@ DNS poisoning/spoofing can:
 
 ### 1. Use DNSSEC Where Appropriate
 
-**DNSSEC** provides mechanisms that allow DNS information to be validated for authenticity and integrity. 
-It helps reduce the risk of accepting forged DNS records.
+**DNSSEC** provides mechanisms that allow DNS information to be validated for authenticity and integrity. It helps reduce the risk of accepting forged DNS records.
 
 ### 2. Secure DNS and Registrar Accounts
 
-Restrict administrative access, use strong authentication, protect registrar accounts, keep DNS software updated, and monitor
-DNS configuration and domain-record changes.
+Restrict administrative access, use strong authentication, protect registrar accounts, keep DNS software updated, and monitor DNS configuration and domain-record changes.
 
 ### 3. Monitor DNS Activity
 
-Monitor for unexpected DNS servers, unusual DNS responses, suspicious record changes, and abnormal query behavior.
-Alerts should be investigated promptly.
+Monitor for unexpected DNS servers, unusual DNS responses, suspicious record changes, and abnormal query behavior. Alerts should be investigated promptly.
 
 ---
 
@@ -339,4 +296,5 @@ The most effective defense is not a single security product but a **layered secu
    https://www.wired.com/story/mirai-untold-story-three-young-hackers-web-killing-monster/
 
 ---
+
 
